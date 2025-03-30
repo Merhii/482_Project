@@ -1,8 +1,13 @@
 import requests
 import pandas as pd 
 
-import apiKey as key
-API_KEY = key.API_KEY
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load from .env file
+
+API_KEY = os.getenv("API_KEY")
+
 
 LOCATION = "Beirut"
 # URL = f"https://api.weatherapi.com/v1/forecast.json?key={API_KEY}&q={LOCATION}&day=10"
