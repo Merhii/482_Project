@@ -21,7 +21,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests pandas 
+        run: pip install requests pandas python-dotenv
 
       - name: Run weather api
         run: python weather.py
