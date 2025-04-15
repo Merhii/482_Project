@@ -21,7 +21,7 @@ def load_data():
 riyadh, paris, lax, weather = load_data()
 
 
-#2
+
 st.header("📅 Seasonal Overview")
 
 all_data = pd.concat([riyadh, paris, lax])
@@ -101,6 +101,7 @@ st.pyplot(fig)
 
 # Group by Airline to get average price
 # Filter options for country with a unique key
+st.subheader("Top 20 Avg Airline Price per Country")
 country = st.selectbox("Select Country", ["Riyadh", "Paris", "LAX"], index=0, key="country_selectbox_unique")
 
 # Function to get top 20 airlines and their average prices for a country
@@ -151,8 +152,8 @@ plot_price_comparison(lax, 'LAX')
 
 st.subheader("📊 Price Type Distribution Across Seasons")
 
-# Combine all data if not already
-all_data = pd.concat([riyadh, paris, lax])
+
+
 
 # Group by Season and Price Type
 season_price_type = all_data.groupby(['Season', 'Price Type']).size().unstack(fill_value=0)
@@ -183,7 +184,7 @@ ax.set_xlabel('Number of Transit Stops')
 ax.set_ylabel('Price per Hour ($)')
 st.pyplot(fig)
 
-import plotly.express as px  # Add this import at the top with other imports
+import plotly.express as px
 
 st.header("🌡️ Temperature vs. Flight Prices")
 
